@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+    
+    
+</head>
+<body>
+    <header>
+    <!-- MENÚ -->
+        <h1>¡ Bienvenido a nuestra cafetería ! </h1>
+        <img src="Img/pj.png" alt="" class="chef">
+        <h2 class="menu"> Menú</h2>
+        <div class="menuItems" id="inventario">
+            <div onclick="comprar(postre)">
+                <img src="Img/comida1.png" alt="" class="item" id="postre">
+            </div>
+
+            <div onclick="comprar(helado)">
+                <img src="Img/comida2.png" alt="" class="item" id="helado">
+            </div>
+
+            <div onclick="comprar(dona)">
+                <img src="Img/comida3.png" alt="" class="item" id="dona">
+            </div>
+
+            <div onclick="comprar(tarta)">
+                <img src="Img/comida4.png" alt="" class="item" id="tarta">
+            </div>
+
+            <div onclick="comprar(dona2)">
+                <img src="Img/comida5.png" alt="" class="item" id="dona2">
+            </div>
+
+            <div onclick="comprar(muffin)">
+                <img src="Img/comida6.png" alt="" class="item" id="muffin">
+            </div>
+
+            <div onclick="comprar(tarta2)">
+                <img src="Img/comida7.png" alt="" class="item" id="tarta2">
+            </div>
+        </div>
+    </header>
+    <!-- ESTADISTICAS -->
+    <section class="stats">
+        <h2 class="stat"><img src="Img/hambre.png" alt="" class="icon"> Hambre: <span id="food"></span> /10 </h2>
+        <h2 class="stat"><img src="Img/cash.png" alt="" class="icon"> Dinero: $ <span id="cash"></span> </h2>
+    </section>
+    <script src="app.js"></script>
+</body>
+</html>
