@@ -17,6 +17,17 @@
 </head>
 <body>
     <header>
+        <!-- CALIFICACIONES -->
+        <div class="tabla">
+            <div class="columnas">
+                <h2 class="servicio"> Calificaciones</h2>
+                <ul class="calificaciones" id="calificaciones">
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+
     <!-- MENÚ -->
         <h1>¡ Bienvenido a nuestra cafetería ! </h1>
         <img src="Img/pj.png" alt="" class="chef">
@@ -51,11 +62,16 @@
             </div>
         </div>
     </header>
-    <!-- ESTADISTICAS -->
+
+    <main>
+        <!-- ESTADISTICAS -->
     <section class="stats">
+        <button onclick="califica()" class="button">Califica nuestro servicio</button>
         <h2 class="stat"><img src="Img/hambre.png" alt="" class="icon"> Hambre: <span id="food"></span> /10 </h2>
         <h2 class="stat"><img src="Img/cash.png" alt="" class="icon"> Dinero: $ <span id="cash"></span> </h2>
     </section>
+    </main>
+
     <script src="app.js"></script>
 </body>
 </html>

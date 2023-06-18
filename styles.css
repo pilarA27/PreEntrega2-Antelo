@@ -2,8 +2,54 @@ h1{
     font-family: 'Teko', sans-serif;
 }
 
+ul{
+    display: block;
+}
+
+li{
+    display: block;
+}
+
 body{
     background: url(Img/background.jpg);
+}
+
+.tabla{
+    width: 300px;
+    padding: 1px;
+    box-sizing: border-box;
+    display: flex;
+    background-color: rgb(254, 197, 187, .8);
+    justify-content: center;
+    position: absolute;
+    right: 1px;
+    z-index: 5;
+    border-radius: 8px;
+    margin-bottom: 0px;
+}
+
+.columnas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio{
+    width: 100%;
+    text-align: center;
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 40px;
+    color: #f8cfab;
+    -webkit-text-stroke: #fcab64 1px;
+    
+}
+
+.calificaciones{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
 }
 
 .menu{
@@ -45,7 +91,7 @@ body{
 
 .chef{
     position: absolute;
-    max-width: 850px;
+    max-width: 100%;
     top: -100px;
     align-items: center;
 }
@@ -54,7 +100,7 @@ body{
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    justify-content: right;
+    justify-content: center;
     z-index: 3;
     bottom: auto;
     top: 260px;
@@ -71,4 +117,20 @@ body{
 .icon{
     width: 30px;
     height: 30px;
+}
+
+.button{
+    font-weight: bolder;
+    font-size: 15px;
+    margin: 15px;
+    padding: 10px;
+    background-color: rgba(194, 254, 189, 0.8);
+    border-radius: 15px;
+    color: #463b3a;
+    border-color: rgb(194, 254, 189, 0.8);
+}
+
+.button:hover{
+    background-color: rgba(155, 206, 150, 0.8);
+    border-color: rgb(155, 206, 150, 0.8);
 }

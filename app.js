@@ -1,19 +1,20 @@
 /** Molde de Items e Items */
 class Item{
-    constructor(nombre, precio, comida){
+    constructor(id, nombre, precio, comida){
+        this.id= id;
         this.nombre = nombre;
         this.precio = precio;
         this.comida = comida;
     }
 }
 
-const tarta = new Item("Tarta", 20, 5);
-const tarta2 = new Item("Tarta", 20, 5);
-const dona = new Item("Dona", 8, 2);
-const dona2 = new Item("Dona", 8, 2);
-const postre = new Item("Postre", 10, 3);
-const muffin = new Item("Muffin", 5, 2);
-const helado = new Item("Helado", 10, 3);
+const tarta = new Item("tarta", "Tarta", 20, 5);
+const tarta2 = new Item("tarta2", "Tarta", 20, 5);
+const dona = new Item("dona", "Dona", 8, 2);
+const dona2 = new Item("dona2", "Dona", 8, 2);
+const postre = new Item("postre", "Postre", 10, 3);
+const muffin = new Item("muffin", "Muffin", 5, 2);
+const helado = new Item("helado", "Helado", 10, 3);
 
 /** Inventario de Tienda */
 
@@ -38,22 +39,42 @@ elementoFood.innerText= food
 
 //Funciones 
 
-function comprar(Item){
-    if(cash - Item.precio > 0 && food < 10){
-        cash = cash - Item.precio;
-        food = food + Item.comida;
-        let index= inventario.indexOf(Item);
-        actualizarHTML();
-    }else if(cash - Item.precio < 0){
-        alert("No tienes suficiente dinero para poder comprar " + Item.nombre);
-        return;
-    }else if (food >= 10){
-        alert("Estas demasiado lleno como para comer " + Item.nombre);
-        return;
+function comprar(Item) {
+    if (food >= 10) {
+      alert("Estas demasiado lleno como para comer " + Item.nombre + ".");
+      return;
+    } else if (food + Item.comida > 10) {
+      alert("No puedes comer " + Item.nombre + " o te alimentará demasiado.");
+      return;
+    } else if (Item.precio > cash) {
+      alert(
+        "No tienes suficiente dinero para poder comprar " + Item.nombre + "."
+      );
+      return;
     }
+    cash = cash - Item.precio;
+    food = food + Item.comida;
+    let divParaEliminar = document.getElementById(Item.id.toLowerCase());
+    divParaEliminar.remove();
+
+  actualizarHTML();
 }
 
 function actualizarHTML(){
     elementoCash.innerText = cash;
     elementoFood.innerText = food;
+}
+
+function califica(){
+  let calificacion = parseInt(prompt("Califique nuestro servicio del 1 al 5"))
+  if(calificacion < 1 || calificacion > 5 ||(isNaN(calificacion))){
+    alert("La calificación ingresada no es valida, porfavor ingrese un número del 1 al 5")
+    return
+  }else{
+    alert("Gracias por calificar nuestro servicio")
+    let ulCalificaciones = document.getElementById("calificaciones");
+    let liCalificacion = document.createElement("li");
+    liCalificacion.textContent = calificacion + "/5";
+    ulCalificaciones.appendChild(liCalificacion);
+  }
 }
